@@ -10,7 +10,7 @@ load_dotenv()
 
 app = FastAPI(title="Thumbnail Generator API")
 
-API_KEY = os.getenv("API_KEY", "tga_uY2ayAC98HUS")
+API_KEY = os.getenv("API_KEY", "pixwallapi")
 API_KEY_NAME = "X-API-KEY"
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=True)
 
@@ -24,7 +24,7 @@ async def get_api_key(api_key: str = Security(api_key_header)):
 
 TARGET_SIZE_KB = 50
 MAX_THUMBNAIL_DIM = 800
-PROFILE_THUMBNAIL_DIM = 40
+PROFILE_THUMBNAIL_DIM = 80
 
 def process_image(image_bytes: bytes, mode: str = "standard") -> bytes:
     """
