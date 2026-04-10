@@ -97,7 +97,8 @@ async def generate_thumbnail(file: UploadFile = File(...)):
     content = await file.read()
     thumbnail_bytes = process_image(content, mode="standard")
     
-    return Response(content=thumbnail_bytes, media_type="image/jpeg")
+    headers = {"Content-Disposition": f"attachment; filename=\"{file.filename}\""}
+    return Response(content=thumbnail_bytes, media_type="image/jpeg", headers=headers)
 
 @app.post("/generate_profile_thumbnail", dependencies=[Depends(get_api_key)])
 async def generate_profile_thumbnail(file: UploadFile = File(...)):
@@ -107,7 +108,8 @@ async def generate_profile_thumbnail(file: UploadFile = File(...)):
     content = await file.read()
     thumbnail_bytes = process_image(content, mode="profile")
     
-    return Response(content=thumbnail_bytes, media_type="image/jpeg")
+    headers = {"Content-Disposition": f"attachment; filename=\"{file.filename}\""}
+    return Response(content=thumbnail_bytes, media_type="image/jpeg", headers=headers)
 
 if __name__ == "__main__":
     import uvicorn
