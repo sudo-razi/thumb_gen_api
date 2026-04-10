@@ -7,3 +7,5 @@ test.py
 output_standard.jpg
 api_test.py
 girl.png
+tests/
+.pytest_cache
