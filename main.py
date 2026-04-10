@@ -10,7 +10,7 @@ load_dotenv()
 
 app = FastAPI(title="Thumbnail Generator API")
 
-API_KEY = os.getenv("API_KEY", "default_secret_key")
+API_KEY = os.getenv("API_KEY", "tga_uY2ayAC98HUS")
 API_KEY_NAME = "X-API-KEY"
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=True)
 
