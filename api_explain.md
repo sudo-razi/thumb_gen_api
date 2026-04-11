@@ -69,7 +69,7 @@ These endpoints fetch an image from a public URL and process it.
 
 ### Generate a WebP Profile Thumbnail from a URL
 ```bash
-curl -X POST "https://your-api.vercel.app/generate_profile_thumbnail_url?image_url=https://example.com/photo.jpg&out_format=webp" \
+curl -X POST "https://api-thumbnail.razi.dev/generate_profile_thumbnail_url?image_url=https://example.com/photo.jpg&out_format=webp" \
      -H "X-API-KEY: pixwallapi" \
      --output profile.webp
 ```
